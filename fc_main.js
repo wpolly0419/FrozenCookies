@@ -53,7 +53,7 @@ function setOverrides() {
   FrozenCookies.lastUpgradeCount = 0;
   FrozenCookies.currentBank = {'cost': 0, 'efficiency' : 0};
   FrozenCookies.targetBank = {'cost': 0, 'efficiency' : 0};
-  FrozenCookies.disabledPopups = true;
+  FrozenCookies.disabledPopups = false;
   FrozenCookies.trackedStats = [];
   FrozenCookies.lastGraphDraw = 0;
   FrozenCookies.calculatedCpsByType = {};
@@ -772,6 +772,7 @@ function purchaseEfficiency(price, deltaCps, baseDeltaCps, currentCps) {
 
 function recommendationList(recalculate) {
   if (recalculate) {
+    FrozenCookies.disabledPopups = true;
     FrozenCookies.caches.recommendationList = addScores(
       upgradeStats(recalculate)
       .concat(buildingStats(recalculate))
@@ -782,6 +783,7 @@ function recommendationList(recalculate) {
       if (FrozenCookies.pastemode) {
         FrozenCookies.caches.recommendationList.reverse();
       }
+    FrozenCookies.disabledPopups = false;
   }
   return FrozenCookies.caches.recommendationList;
 //  return upgradeStats(recalculate).concat(buildingStats(recalculate)).sort(function(a,b){return (a.efficiency - b.efficiency)});
@@ -1571,7 +1573,6 @@ function autoCookie() {
       recommendation.time = Date.now() - Game.startDate;
 //      full_history.push(recommendation);  // Probably leaky, maybe laggy?
       recommendation.purchase.clickFunction = null;
-      disabledPopups = false;
 //      console.log(purchase.name + ': ' + Beautify(recommendation.efficiency) + ',' + Beautify(recommendation.delta_cps));
       recommendation.purchase.buy();
       FrozenCookies.autobuyCount += 1;
@@ -1581,7 +1582,6 @@ function autoCookie() {
         FrozenCookies.delayPurchaseCount += 1;
       }
       logEvent('Store', 'Autobought ' + recommendation.purchase.name + ' for ' + Beautify(recommendation.cost) + ', resulting in ' + Beautify(recommendation.delta_cps) + ' CPS.');
-      disabledPopups = true;
       if (FrozenCookies.autobuyCount >= 10) {
       	Game.Draw();
       	FrozenCookies.autobuyCount = 0;
