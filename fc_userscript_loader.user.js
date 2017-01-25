@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name           Frozen Cookies
 // @version        github-latest
-// @description    Userscript to load Frozen Cookies written by Icehawk78, forked by haerik
+// @description    Userscript to load Frozen Cookies written by Icehawk78, forked by haerik, ramononis
 // @author         shinji257
 // @homepage       https://github.com/Icehawk78/FrozenCookies
 // @include        http://orteil.dashnet.org/cookieclicker/
-// @updateURL      https://rawgithub.com/haerik/FrozenCookies/master/fc_userscript_loader.js
-// @downloadURL    https://rawgithub.com/haerik/FrozenCookies/master/fc_userscript_loader.js
+// @updateURL      https://rawgithub.com/ramononis/FrozenCookies/master/fc_userscript_loader.js
+// @downloadURL    https://rawgithub.com/ramononis/FrozenCookies/master/fc_userscript_loader.js
 // @run-at         document-start
 // ==/UserScript==
 
@@ -19,7 +19,7 @@ function LoadFrozenCookies() {
   var js = document.createElement('script');
   js.setAttribute('type', 'text/javascript');
   js.setAttribute('id', 'frozenCookieScript');
-  js.setAttribute('src', 'https://rawgithub.com/haerik/FrozenCookies/master/frozen_cookies.js');
+  js.setAttribute('src', 'https://rawgithub.com/ramononis/FrozenCookies/master/frozen_cookies.js');
   document.head.appendChild(js);
 }
 
