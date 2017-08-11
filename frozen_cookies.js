@@ -2,7 +2,7 @@
 var scriptElement = document.getElementById('frozenCookieScript') !== null ?
 		document.getElementById('frozenCookieScript') : 
 		document.getElementById('modscript_frozen_cookies'),
-	baseUrl = 'https://rawgit.com/ramononis/FrozenCookies/master',
+	baseUrl = 'https://rawgit.com/wpolly0419/FrozenCookies/master',
 	FrozenCookies = {
 		'baseUrl': baseUrl,
 		'branch' : 'Beta-',
