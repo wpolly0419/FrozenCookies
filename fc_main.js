@@ -180,7 +180,10 @@ var numberFormatters = [
     ' nonillion',
     ' decillion',
     ' undecillion',
-    ' duodecillion' 
+    ' duodecillion',
+    ' tredecillion',
+    ' quattuordecillion',
+    ' quindecillion',
   ]),
 
   formatEveryThirdPower([
@@ -195,8 +198,11 @@ var numberFormatters = [
     ' Oc',
     ' No',
     ' De',
-    ' Un',
-    ' Duo' 
+    ' UnDec',
+    ' DuoDec',
+    ' TreDec',
+    ' QuaDec', 
+    ' QuinDec', 
   ]),
 
   formatEveryThirdPower([
